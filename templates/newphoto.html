@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>search</title>
+</head>
+<body>
+<h3> After Search </h3>
+{% for key,value in data.items() :%}
+     {% for v in value : %}
+        <br><br>
+        Post By:{{key}}
+        <br>
+        <td><tr><img src={{v[0]}} height="200" width="200"/></tr></td>
+        <br>
+        Comments :{{v[1]}}
+        <br>
+        Date :{{v[2]}}
+        <br>
+        Group :{{v[3]}}
+     {% endfor %}
+{% endfor %}
+
+</body>
+</html>

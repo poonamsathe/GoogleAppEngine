@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Photos</title>
+</head>
+
+<body>
+<h2> Poonam D. Sathe </h2>
+	<h2> Student ID :1001230527</h2>
+<h2> All Photos </h2>
+{% for key,value in data.items() :%}
+     {% for v in value : %}
+        <br><br>
+        Post By:{{key}}
+        <br>
+        <td><tr><img src={{v[0]}} height="200" width="200"/></tr></td>
+        <br>
+        Comments :{{v[1]}}
+        <br>
+        Date :{{v[2]}}
+        <br>
+        Group :{{v[3]}}
+     {% endfor %}
+{% endfor %}
+
+<h3> Search by group. Give group number </h3>
+<form action="/search_by_group" method="post">
+<p><input type="text" name="group" value="group" placeholder="group"></p>
+<p><input type="submit" name="find" value="find"></p>
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+<title> Upload </title>
+</head>
+<body>
+<h2> Poonam D. Sathe </h2>
+<h2> Student ID :1001230527</h2>
+<h3> Time taken to connect database :{{dbconnection}}  </h3>
+<h3> Time taken for login : {{logintime}} </h3>
+
+<h3> upload file </h3>
+
+
+<h1> Upload Photos </h1>
+{% for item in result :%}
+   {{ item }}
+{% endfor %}
+
+<form action = "/uploadtext" method ="post" enctype = "multipart/form-data">
+    <p>Select file: <input type = 'file' value='choose' name='file1' /> </p>
+    <input type = 'submit' value='Submit' />
+</form>
+
+<form action = "/showtext" method ="post" enctype = "multipart/form-data">
+   <p><input type="text" name="name" value="name" placeholder="name"></p>
+    <p><input type="submit" name="get" value="get"></p>
+</form>
+
+<form action = "/upload_photo" method ="post" enctype = "multipart/form-data">
+    <p>Select Photo: <input type = 'file' value='choose' name='file' /> </p>
+    <p> Comment <textarea name='comment' value='comment' maxlength = "50"></textarea></p>
+    <input type = 'submit' value='Submit' />
+</form>
+
+<form action = "/show_all_photo" method ="post" enctype = "multipart/form-data">
+   <input type = 'submit' value='View All Posts' />
+</form>
+
+<form action = "/show_my_photo" method ="post" enctype = "multipart/form-data">
+   <input type = 'submit' value='View My Posts' />
+</form>
+
+</body>
+</html>

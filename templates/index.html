@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+	<title>Login </title>
+</head>
+<body>
+	<h2> Poonam D. Sathe </h2>
+	<h2> Student ID :1001230527</h2>
+	<h2> Login to Web App </h2>
+	<br>
+
+	<form action="/check" method="post">
+        <p><input type="text" name="email" value="email" placeholder="Username or Email"></p>
+        <p><input type="password" name="password" value="password" placeholder="Password"></p>
+		<p><input type="submit" name="login" value="login"></p>
+	</form>
+
+	<h2> Register Now </h2>
+	<form action="/saving_name" method="post">
+        <p><input type="email" name="email" value="email" placeholder="Username or Email"></p>
+        <p><input type="password" name="password" value="password" placeholder="Password"></p>
+		<p><input type="text" name="group" value="group" placeholder="group"></p>
+		<p><input type="submit" name="Register" value="Register"></p>
+	</form>
+
+<h2> Time required for database connection : {{dbconnection}} </h2>
+<h2> Time required for Registration: {{forall}}</h2>
+
+</body>
+</html>

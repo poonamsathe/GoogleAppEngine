@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Photos</title>
+</head>
+<body>
+<h2> Poonam D. Sathe </h2>
+<h2> Student ID :1001230527</h2>
+<h2> My Photos </h2>
+{% for key,value in data.items() :%}
+     {% for v in value : %}
+        <br><br>
+        <td><tr><img src={{v[0]}} height="200" width="200"/></tr></td>
+        <br>
+        Comments :{{v[1]}}
+        <br>
+        Date : {{v[2]}}
+        <br>
+        Group : {{v[3]}}
+     {% endfor %}
+<div>
+ <form action = "/delete_photo" method ="post" enctype = "multipart/form-data">
+        <input type = "hidden" name = "id" value = {{key}} />
+        <input type = 'submit' value='Delete Post' />
+ </form>
+</div>
+<div>
+    <form action = "/delete_comment" method ="post" enctype = "multipart/form-data">
+        <input type = "hidden" name = "id" value = {{key}} />
+        <input type = 'submit' value='Delete comment' />
+    </form>
+</div>
+<div>
+    <form action = "/edit_comment" method ="post" enctype = "multipart/form-data">
+        <input type = "hidden" name = "id" value = {{key}} />
+        <br><br>
+        New Comment <textarea name='newcomment' value='newcomment' maxlength = "50"></textarea>
+        <br><br>
+        <input type = 'submit' value='Edit comment' />
+    </form>
+</div>
+
+{% endfor %}
+</body>
+</html>
